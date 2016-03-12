@@ -1,1 +1,1 @@
-# swarmdemo1
+https://dzone.com/articles/hello-world-with-wildfly-swarm

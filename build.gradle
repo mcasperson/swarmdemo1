@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Beta2"
+    }
+}
+
+group 'com.matthewcasperson'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'wildfly-swarm'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://repository.jboss.org/nexus/content/groups/public-jboss'
+    }
+    maven {
+        url 'https://maven.repository.redhat.com/nexus/content/repositories/public'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.wildfly.swarm:bootstrap:1.0.0.Beta2'
+    compile 'org.wildfly.swarm:jsf:1.0.0.Beta2'
+    compile 'org.wildfly.swarm:weld:1.0.0.Beta2'
+}
